@@ -1,0 +1,14 @@
+{
+    
+    "bikes": [{
+        "name": "B1",
+        "kms":"0",
+        "description": "The Description"
+       
+    }
+    ],
+    "name": "Arc de Triomf",
+    "status": true,
+    "description": "Value 6"
+   
+}

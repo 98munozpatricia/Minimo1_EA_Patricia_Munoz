@@ -8,6 +8,10 @@ const StationSchema = new Schema({
     name: String,
     state: Boolean,
     description: String,
+    bikes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Bikes'
+    }],
    
    
 })

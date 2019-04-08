@@ -7,6 +7,7 @@ const api = express.Router()
 
 //User functions routes
 api.get('/bike',bikeCtrl.getBike1)
+api.getstations('/stations',stationCtrl.getstations)
 /*
 api.get('/users', userCtrl.getUsers)
 api.get('/users/:username', userCtrl.getUser1)
