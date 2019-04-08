@@ -17,5 +17,5 @@ api.post('/stations', stationCtrl.postStation)
 api.post('/bikes', bikeCtrl.postBike)
 //Put Functtions
 api.put('/stations', stationCtrl.addBike);
-api.put('/stations/bikedetail/:id', bikeCtrl.deleteBike);
+api.put('/stations/bikes/:id', bikeCtrl.deleteBike);
 module.exports = api
