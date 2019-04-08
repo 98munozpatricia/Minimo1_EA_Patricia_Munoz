@@ -8,19 +8,6 @@ const BikeSchema = new Schema({
     name: String,
     kms: String,
     description: String,
-    matches: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Match'
-    }],
-    ratings: [
-        {
-            numberOfStars: Number,
-            created: { 
-                type: Date,
-                default: Date.now
-            }
-        }
-    ]
 })
 
 
