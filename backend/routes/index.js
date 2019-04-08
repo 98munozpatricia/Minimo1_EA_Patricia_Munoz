@@ -1,21 +1,24 @@
 'use strict'
 
 const express = require('express')
-const productCtrl = require('../controllers/product')
-const userCtrl = require('../controllers/bike')
-const auth = require('../middlewares/auth')
+const userCtrl = require('../controllers/user')
+const matchCtrl = require('../controllers/match')
 const api = express.Router()
 
-//RUTAS API (GET, POST, PUT, DELETE)
-api.get('/product', auth, productCtrl.getProducts)
-api.get('/product/:productId', auth, productCtrl.getProduct)
-api.post('/product', auth, productCtrl.saveProduct)
-api.put('/product/:productId', auth, productCtrl.updateProduct)
-api.delete('/product/:productId', auth, productCtrl.deleteProduct)
-api.post('/signup', userCtrl.signUp)
-api.post('/signin', userCtrl.signIn)
-api.get('/private', auth, (req, res) => {
-  res.status(200).send({ message: 'Tienes acceso' })
-})
+//User functions routes
+api.get('/bike',bikeCtrl.getBike1)
+/*
+api.get('/users', userCtrl.getUsers)
+api.get('/users/:username', userCtrl.getUser1)
+api.get('/users/:_id', userCtrl.getUser2)
+api.post('/users', userCtrl.createUser)
+api.put('/users/:_id', userCtrl.updateUser)
+api.delete('/users/:_id', userCtrl.deleteUser)
+api.post('/signin', userCtrl.signin)
 
+
+//Matches routes
+api.get('/matches', matchCtrl.getMatches)
+api.post('/matches', matchCtrl.createMatch)
+*/
 module.exports = api

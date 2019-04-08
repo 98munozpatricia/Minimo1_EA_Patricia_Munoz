@@ -1,38 +1,26 @@
 {
-  "name": "api-rest",
+  "name": "bikebackend",
   "version": "1.0.0",
-  "description": "Proyecto de API RESTful",
-  "main": "backend/index.js",
+  "description": "BikeService RESTful API",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Reva Dhawan",
+  "author": "",
   "license": "MIT",
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
+    "age-calculator": "^1.0.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "crypto": "^1.0.1",
     "express": "^4.16.4",
-    "express-handlebars": "^3.0.2",
-    "jwt-simple": "^0.5.5",
     "moment": "^2.24.0",
-    "mongoose": "^5.4.10",
+    "mongoose": "^5.4.17",
     "morgan": "^1.9.1",
-    "validator.ts": "^0.2.2"
+    "swagger-node-express": "^2.1.3",
+    "swagger-ui-express": "^4.0.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.13.8",
     "nodemon": "^1.18.10"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/revadhawan/Demo-API-REST.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/revadhawan/Demo-API-REST/issues"
-  },
-  "homepage": "https://github.com/revadhawan/Demo-API-REST#readme"
+  }
 }

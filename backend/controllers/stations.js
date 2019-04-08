@@ -1,18 +1,27 @@
 'use strict'
 
-const Bike = require('../models/bike')
+const Bike = require('../models/user')
 
 
 //Create user
 function createUser(req, res){
     console.log(req.body)
-    let bike = new Bike()
-    bike.name = req.body.name
-    bike.kms = req.body.kms
-    bike.description = req.body.description
-   
+    let Bike = new Bike()
+    user.name = req.body.name
+    user.surname = req.body.surname
+    user.username = req.body.username
+    user.password = req.body.password
+    user.email = req.body.email
+    user.signUpDate = req.body.signUpDate
+    user.lastLogin = req.body.lastLogin
+    user.age = req.body.age
+    user.picture = req.body.picture
+    user.description = req.body.description
+    user.localization = req.body.localization
+    user.premium = req.body.premium
+    user.tag = req.body.tag
 
-    bike.save((err, userStored) => {
+    user.save((err, userStored) => {
         if(err) res.status(500).send({message: `Error al salvar en la base de datos: ${err}`})
 
         res.status(200).send({user: userStored})
@@ -33,18 +42,18 @@ function getUsers(req, res){
 
 
 //Get one user by username
-function getBike1 (req, res){
-    let name = req.params.name
-    console.log(name)
+function getUser1 (req, res){
+    let username = req.params.username
+    console.log(username)
 
-    Bike.findOne({name: name}, (err, bike) =>{
+    User.findOne({name: username}, (err, user) =>{
         if(err) return res.status(500).send({message: `Error al realizar la petición: ${err}`})
         if(!user) return res.status(404).send({message: `No existe el ususario`})
 
         res.status(200).send(user)
     })
 }
-/*
+
 
 //Get one user by ID
 function getUser2 (req, res) {
@@ -93,14 +102,13 @@ function signin (req, res) {
   })
 }   
 
-*/
+
 module.exports = {
-  getBike1
-   // createUser,
-   // getUsers,
-   // getUser1,
-   // getUser2,
-   // updateUser,
-   // deleteUser,
-   // signin    
+    createUser,
+    getUsers,
+    getUser1,
+    getUser2,
+    updateUser,
+    deleteUser,
+    signin    
 }
