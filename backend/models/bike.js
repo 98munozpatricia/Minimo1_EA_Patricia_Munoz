@@ -7,6 +7,7 @@ const Schema = mongoose.Schema
 const BikeSchema = new Schema({
     name: String,
     kms: String,
+    status: Boolean,
     description: String,
 })
 

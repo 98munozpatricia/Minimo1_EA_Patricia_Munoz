@@ -9,8 +9,9 @@ const StationSchema = new Schema({
     state: Boolean,
     description: String,
     bikes: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Bikes'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Bikes',
+        unique: false
     }],
    
    

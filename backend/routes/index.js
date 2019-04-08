@@ -1,25 +1,21 @@
 'use strict'
 
 const express = require('express')
-const userCtrl = require('../controllers/user')
-const matchCtrl = require('../controllers/match')
+const bikeCtrl = require('../controllers/bike')
+const stationCtrl = require('../controllersstation')
 const api = express.Router()
 
-//User functions routes
-api.get('/bike',bikeCtrl.getBike1)
-api.getstations('/stations',stationCtrl.getstations)
-/*
-api.get('/users', userCtrl.getUsers)
-api.get('/users/:username', userCtrl.getUser1)
-api.get('/users/:_id', userCtrl.getUser2)
-api.post('/users', userCtrl.createUser)
-api.put('/users/:_id', userCtrl.updateUser)
-api.delete('/users/:_id', userCtrl.deleteUser)
-api.post('/signin', userCtrl.signin)
+//Get Functions
 
+api.get('/stations', stationCtrl.getStations);
+api.get('/stations/:id', stationCtrl.getStationsData);
+api.get('/stations/bikes/:id', stationCtrl.getAvailableBikes);
+api.get('/bikes', bikeCtrl.getBikes);
 
-//Matches routes
-api.get('/matches', matchCtrl.getMatches)
-api.post('/matches', matchCtrl.createMatch)
-*/
+//Post Functions
+api.post('/stations', stationCtrl.postStation)
+api.post('/bikes', bikeCtrl.postBike)
+//Put Functtions
+api.put('/stations', stationCtrl.addBike);
+api.put('/stations/bikedetail/:id', bikeCtrl.deleteBike);
 module.exports = api
